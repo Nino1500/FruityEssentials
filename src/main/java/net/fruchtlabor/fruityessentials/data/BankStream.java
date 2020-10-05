@@ -1,16 +1,18 @@
 package net.fruchtlabor.fruityessentials.data;
 
+import net.fruchtlabor.fruityessentials.database.DBContext;
+import net.fruchtlabor.fruityessentials.database.DBMoney;
 import org.bukkit.plugin.Plugin;
 
 public class BankStream {
 
-    private Plugin plugin;
-    private DBController dbController;
+    DBContext dbContext = new DBContext("localhost", 3306, "mc", "mc", "money_db");
+    DBMoney dbMoney = new DBMoney(dbContext);
 
-    public BankStream(Plugin plugin) {
-        this.plugin = plugin;
-        dbController = new DBController(plugin);
+    public BankStream() {
+
     }
+
 
     public boolean createBank(String bankname){
         if(checkBankExists(bankname)){

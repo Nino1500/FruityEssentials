@@ -22,7 +22,7 @@ public class DBMoney {
             ResultSet rs = ps.executeQuery();
             close(ps,rs);
         } catch (SQLException ex) {
-            FruityEssentials.getInstance().getLogger().log(Level.SEVERE, "Unable to retreive connection", ex);
+            ex.printStackTrace();
         }
     }
 
@@ -40,7 +40,7 @@ public class DBMoney {
                 }
             }
         } catch (SQLException ex) {
-            FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionExecute(), ex);
+            ex.printStackTrace();
         } finally {
             try {
                 if (ps != null)
@@ -48,7 +48,7 @@ public class DBMoney {
                 if (conn != null)
                     conn.close();
             } catch (SQLException ex) {
-                FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionClose(), ex);
+                ex.printStackTrace();
             }
         }
         return 0;
@@ -68,7 +68,7 @@ public class DBMoney {
             ps.setDouble(2, money);
             ps.executeUpdate();
         } catch (SQLException ex) {
-            FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionExecute(), ex);
+            ex.printStackTrace();
         } finally {
             try {
                 if (ps != null)
@@ -76,7 +76,7 @@ public class DBMoney {
                 if (conn != null)
                     conn.close();
             } catch (SQLException ex) {
-                FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionClose(), ex);
+                ex.printStackTrace();
             }
         }
     }
@@ -105,7 +105,7 @@ public class DBMoney {
                 if (conn != null)
                     conn.close();
             } catch (SQLException ex) {
-                FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionClose(), ex);
+                ex.printStackTrace();
             }
         }
         return false;
@@ -121,7 +121,7 @@ public class DBMoney {
             ps.setDouble(1, total);
             ps.executeUpdate();
         } catch (SQLException ex) {
-            FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionExecute(), ex);
+            ex.printStackTrace();
         } finally {
             try {
                 if (ps != null)
@@ -129,7 +129,7 @@ public class DBMoney {
                 if (conn != null)
                     conn.close();
             } catch (SQLException ex) {
-                FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionClose(), ex);
+                ex.printStackTrace();
             }
         }
     }
@@ -148,7 +148,7 @@ public class DBMoney {
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
-            FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionExecute(), ex);
+            ex.printStackTrace();
         } finally {
             try {
                 if (ps != null)
@@ -156,7 +156,7 @@ public class DBMoney {
                 if (conn != null)
                     conn.close();
             } catch (SQLException ex) {
-                FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionClose(), ex);
+                ex.printStackTrace();
             }
         }
         return false;
@@ -176,7 +176,7 @@ public class DBMoney {
             }
             return map;
         } catch (SQLException ex) {
-            FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionExecute(), ex);
+            ex.printStackTrace();
         } finally {
             try {
                 if (ps != null)
@@ -186,7 +186,7 @@ public class DBMoney {
                 if (rs != null)
                     rs.close();
             } catch (SQLException ex) {
-                FruityEssentials.getInstance().getLogger().log(Level.SEVERE, Errors.sqlConnectionClose(), ex);
+                ex.printStackTrace();
             }
         }
         return null;
@@ -199,7 +199,7 @@ public class DBMoney {
             if (rs != null)
                 rs.close();
         } catch (SQLException ex) {
-            Error.close(FruityEssentials.getInstance(), ex);
+            ex.printStackTrace();
         }
     }
 }

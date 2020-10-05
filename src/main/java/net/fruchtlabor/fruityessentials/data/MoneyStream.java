@@ -1,38 +1,36 @@
 package net.fruchtlabor.fruityessentials.data;
 
+import net.fruchtlabor.fruityessentials.database.DBContext;
+import net.fruchtlabor.fruityessentials.database.DBMoney;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
 import java.util.*;
 
 public class MoneyStream {
-    Plugin plugin;
 
-    public MoneyStream(Plugin plugin) {
-        this.plugin = plugin;
-    }
-
-    DBController dbController = new DBController(plugin);
+    DBContext dbContext = new DBContext("localhost", 3306, "mc", "mc", "money_db");
+    DBMoney dbMoney = new DBMoney(dbContext);
 
     public double getBalance(String player){
         try {
-            return dbController.getTokens(player);
+            return dbMoney.getTokens(player);
         }catch (NullPointerException e){
             Objects.requireNonNull(Bukkit.getPlayer(player)).sendMessage("Du hast noch kein Geld verdient!");
         }
         return 0.0;
     }
     public void setBalance(String player, double am){
-        dbController.setTokens(Objects.requireNonNull(Bukkit.getPlayer(player)), am);
+        dbMoney.setTokens(Objects.requireNonNull(Bukkit.getPlayer(player)), am);
     }
     public void giveMoney(String player, double am){
-        dbController.modifyTokens(Objects.requireNonNull(Bukkit.getPlayer(player)), am);
+        dbMoney.modifyTokens(Objects.requireNonNull(Bukkit.getPlayer(player)), am);
     }
     public boolean deleteMoney(String player, double am){
-        return dbController.modifyTokenNegative(Objects.requireNonNull(Bukkit.getPlayer(player)), am);
+        return dbMoney.modifyTokenNegative(Objects.requireNonNull(Bukkit.getPlayer(player)), am);
     }
     public ArrayList<String> getTopBalance(int rows){
-        HashMap<String, Double> map = dbController.getAllTokens();
+        HashMap<String, Double> map = dbMoney.getAllTokens();
         map = sortByValue(map);
         ArrayList<String> list = new ArrayList<>();
         int i = 1;

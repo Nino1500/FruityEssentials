@@ -22,7 +22,7 @@ public class Money implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(command.getName().equalsIgnoreCase("money") || command.getName().equalsIgnoreCase("geld")){
-            MoneyStream moneyStream = new MoneyStream(plugin);
+            MoneyStream moneyStream = new MoneyStream();
             switch (strings.length){
                 case 0: //0 Param
                     if(commandSender instanceof Player){

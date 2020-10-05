@@ -17,9 +17,6 @@ public final class FruityEssentials extends JavaPlugin {
         return instance;
     }
 
-
-    private Database db;
-
     @Override
     public void onLoad() {
         instance = this;
@@ -27,9 +24,6 @@ public final class FruityEssentials extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
-        this.db = new DBController.SQLite(this);
-        this.db.load();
 
         this.getCommand("money").setExecutor(new Money(this));
         this.getCommand("bank").setExecutor(new Bank(this));

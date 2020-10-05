@@ -17,8 +17,11 @@ public class Bank implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+
         if(command.getName().equalsIgnoreCase("bank")){
-            BankStream bankStream = new BankStream(plugin);
+
+            BankStream bankStream = new BankStream();
+
             switch (strings.length){
                 case 0:
                     commandSender.sendMessage(ChatColor.GOLD+"<[FruchtBank]>");
