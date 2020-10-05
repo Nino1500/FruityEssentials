@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FruityEssentials">
+    <output-path>$USER_HOME$/Desktop/testserver/plugins</output-path>
+    <root id="archive" name="FruityEssentials.jar">
+      <element id="module-output" name="FruityEssentials" />
+      <element id="library" level="project" name="org.xerial:sqlite-jdbc:3.32.3.2" />
+    </root>
+  </artifact>
+</component>

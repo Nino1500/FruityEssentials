@@ -1,0 +1,15 @@
+name: FruityEssentials
+version: ${project.version}
+main: net.fruchtlabor.fruityessentials.FruityEssentials
+api-version: 1.13
+authors: [Nino, Patrick]
+description: CMI System für Fruchtlabor.net
+website: Fruchtlabor.net
+commands:
+  money:
+    usage: /money
+    aliases: ['/geld']
+    description: Der Geldbefehl
+  bank:
+    usage: /bank
+    description: Der Bankbefehl
