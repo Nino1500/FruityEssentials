@@ -16,7 +16,7 @@ public class MassClass {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user "+player.getName()+" permission set "+perm);
     }
 
-    //Has al Commandnames in it, if you need the perm, just add fe.'name' to it!
+    //Has all Commandnames in it, if you need the perm, just add fe.'name' to it!
     public ArrayList<String> getAllCommands(){ // TODO: Immer aktualisieren
         ArrayList<String> list = new ArrayList<>();
         list.add("help");

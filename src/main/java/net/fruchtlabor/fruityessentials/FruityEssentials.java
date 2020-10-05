@@ -2,13 +2,7 @@ package net.fruchtlabor.fruityessentials;
 
 import net.fruchtlabor.fruityessentials.commands.Bank;
 import net.fruchtlabor.fruityessentials.commands.Money;
-import net.fruchtlabor.fruityessentials.database.DBController;
-import net.fruchtlabor.fruityessentials.database.Database;
 import net.fruchtlabor.fruityessentials.listeners.Join;
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;

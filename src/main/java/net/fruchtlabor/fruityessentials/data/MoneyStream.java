@@ -1,6 +1,5 @@
 package net.fruchtlabor.fruityessentials.data;
 
-import net.fruchtlabor.fruityessentials.database.DBController;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
