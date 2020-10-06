@@ -1,0 +1,127 @@
+debug: true
+Config:
+    preventExplosionWorlds:
+      - world
+      - plots
+    preventFireSpreadWorlds:
+      - world
+      - plots
+    preventStarveWorlds:
+      - world
+    preventLeaveDecayWorlds:
+      - world
+      - plots
+    preventCreatureSpawningWorlds:
+      - world
+      - plots
+    preventVoidEnterWorlds:
+      - world
+    preventWeatherChangeWorlds:
+      - world
+      - plots
+    preventXpDropWorlds:
+      - world
+      - plots
+    preventDamageWorlds:
+      - world
+      - plots
+    preventFieldDestroyWorlds:
+      - world
+      - plots
+    noTimeChangeWorlds:
+      enabled: true
+      worlds:
+        lobby:
+          time: 2000
+    announcements:
+      enabled: true
+      interval: 60
+      messages:
+        - "Teamspeak: "
+        - "Website: "
+    pluginProtection: true
+    tpaSuspensionTime: 30
+    SpawnLocation:
+        world:
+        x:
+        y:
+        z:
+        yaw:
+        pitch:
+warps:
+  dummy:
+Messages:
+    prefix: '§bFruityEssentials §8> §7'
+    noPermission: '§cKeine Berechtigung, um diesen Befehl auszuführen!'
+    missingParameters: '§cEs fehlen Parameter!'
+    notSupported: '§cNicht unterstützt!'
+    join: '§8[§a+§8] §7%n hat das Spiel betreten'
+    quit: '§8[§c-§8] §7%n hat das Spiel verlassen'
+    weatherSetSun: '§aWetter in §b%n§a wurde auf §6Sonnig §agesetzt.'
+    weatherSetStorm: '§aWetter in §b%n§a wurde auf §9Sturm §agesetzt.'
+    mwListBegin: '§7=-=-=-=-=-=-=-=§8[ §bWelten §8]§7=-=-=-=-=-=-=-='
+    mwListItem: '§7%i: %n'
+    mwListEnd: '§7=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-='
+    mwWorldNotFound: '§8[§c-§8] §8Die Welt §c%n §7existiert nicht!'
+    mwWorldDeleted: '§8[§a+§8] §7Welt §c%n §7wurde gelöscht!'
+    mwWorldCouldNotBeDeleted: '§8[§c-§8] §7Welt §c%n §7konnte nicht gelöscht werden!'
+    mwTeleported: 'Du wurdest in die Welt %n teleportiert!'
+    tpTeleported: 'Du wurdest zu §a%n §7teleportiert!'
+    tpTeleportedOther: 'Du hast §a%n §7zu §a%m §7teleportiert!'
+    tpaSent: "Du hast eine §aTPA-Anfrage §7an §a%n §7gesendet!"
+    playerOffline: '§8[§c-§8] §7Der Spieler §c%n §7ist §coffline!'
+    gameModeChanged: 'Dein Spielmodus hat zu §b%n §7gewechselt!'
+    gameModeChangedOther: '§8[§a+§8] §7Du hast den Spielmodus von §a%m §7zu §a%n §7geändert!'
+    tpaSuspensionCounter: '§7Ablaufzeit: §c%n'
+    tpaSuspended: 'Die Anfrage ist bereits §cabgelaufen§7!'
+    tpaDeclined: 'Die Teleportations-Anfrage wurde §cabgelehnt§7!'
+    tpaRequestBegin: '§7=-=-=-=§8[ §bTeleport - Anfrage: §a%n §8]§7=-=-=-='
+    tpaRequestEnd: '§7=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-='
+    tpaHereRequestBegin: '§7=-=-=-=§8[ §bTeleport(Zu dir) - Anfrage: §a%n §8]§7=-=-=-='
+    tpaHereRequestEnd: '§7=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-='
+    spawnTeleported: 'Du wurdest zum Spawn teleportiert!'
+    spawnNotSet: '§8[§c-§8] §7Die Spawn-Location wurde noch nicht gesetzt!'
+    spawnSubTitle: '§c#############################'
+    spawnSet: '§8[§a+§8] §7Du hast den Spawn auf deine Position gesetzt.'
+    playerDeath_CONTACT: '%n hat etwas tödliches berührt...es war ein %k!'
+    playerDeath_ENTITY_ATTACK: '%n wurde von %k getötet!'
+    playerDeath_ENTITY_SWEEP_ATTACK: '%n wurde von %k weggefegt!'
+    playerDeath_PROJECTILE: '%n wurde von %k erschossen'
+    playerDeath_SUFFOCATION: '%n wurde von %k erstickt'
+    playerDeath_FALL: '%n fiel zu Tode'
+    playerDeath_FIRE: '%n verbrannte'
+    playerDeath_FIRE_TICK: '%n verbrannte'
+    playerDeath_MELTING: '%n fiel einem Schneemann zu Opfer'
+    playerDeath_LAVA: '%n versuchte in Lava zu schwimmen'
+    playerDeath_DROWNING: '%n erstickte elendig'
+    playerDeath_BLOCK_EXPLOSION: '%n hätte besser weglaufen sollen'
+    playerDeath_ENTITY_EXPLOSION: '%n wurde von %k weggebombt'
+    playerDeath_VOID: '%n fiel ins Nichts..'
+    playerDeath_LIGHTNING: '%n wurde vom Blitz getroffen'
+    playerDeath_SUICIDE: '%n beging Selbstmord'
+    playerDeath_STARVATION: '%n verhungerte elendig'
+    playerDeath_POISON: '%n starb an Vergiftung. Gut gemacht, %k!'
+    playerDeath_MAGIC: 'Its a kind of Magic! %n wurde von %k verhext'
+    playerDeath_WITHER: '%n wurde vom Wither getötet. Schande über dich!'
+    playerDeath_FALLING_BLOCK: '%n wurde von %k brutal erschlagen!'
+    playerDeath_THORNS: '%n wurde von %k getötet'
+    playerDeath_DRAGON_BREATH: '%n wurde vom Ender Drachen getötet. Schande über dich!'
+    playerDeath_CUSTOM: '%n wurde getötet'
+    playerDeath_FLY_INTO_WALL: 'Huiiiii Buh!..Shit. %n gestorben'
+    playerDeath_HOT_FLOOR: '%n versuchte über..%k zu laufen?!'
+    playerDeath_CRAMMING: '%n wurde elendig zerquetscht!'
+    flyingSpeed: '§aDu hast die Fluggeschwindigkeit auf §c%n §agesetzt'
+    walkingSpeed: '§aDu hast die Gehgeschwindigkeit auf §c%n §agesetzt'
+    warpTeleported: '§aDu wurdest zum Punkt §c%n §ateleportiert.'
+    warpNotExist: '§cDer Punkt §a%n §cexistiert nicht!'
+    setWarpExist: '§cDer Punkt §a%n §cexistiert schon!'
+    setWarpDone: '§aDer Punkt §c%n §awurde erstellt.'
+    flyOff: '§aFlugmodus auf §cAUS §agesetzt.'
+    flyOn: '§aFlugmodus auf §cAN §agesetzt.'
+    kitCreated: 'Das kit §a%n wurde erstellt!'
+    playerInfoBegin: "§7[i] §a%n"
+    playerInfoGroup: "§8> §7Gruppe: §b%n"
+    playerInfoWorld: "§8> §7Welt: §b%n"
+    playerInfoFirstJoin: "§8> §7Erster Beitritt: §b%n"
+    playerInfoIP: "§8> §7IP: §b%n"
+    playerInfoCountry: "§8> §7Standort: §b%n"

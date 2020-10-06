@@ -7,9 +7,9 @@ description: CMI System für Fruchtlabor.net
 website: Fruchtlabor.net
 commands:
   money:
-    usage: /money
-    aliases: ['/geld']
+    aliases: ['geld']
     description: Der Geldbefehl
   bank:
-    usage: /bank
     description: Der Bankbefehl
+  tp:
+    description: Teleport

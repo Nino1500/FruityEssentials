@@ -28,8 +28,8 @@ public class Money implements CommandExecutor {
                     if(commandSender instanceof Player){
                         Player player = ((Player) commandSender).getPlayer();
                         assert player != null;
-                        double am = moneyStream.getBalance(player.getName());
-                        player.sendMessage("Kontostand: "+am);
+                        double am = moneyStream.getBalance(player);
+                        player.sendMessage(ChatColor.DARK_GREEN+"[Geld] "+ChatColor.GREEN+am); //WORKS
                         return true;
                     }
                     break;
@@ -37,59 +37,60 @@ public class Money implements CommandExecutor {
                         if(strings[0].equalsIgnoreCase("log")){
                             //TODO Transactions logger
                         }
-                        if(strings[0].equalsIgnoreCase("top")){
-                            ArrayList<String> list = moneyStream.getTopBalance(10);
+                        if(strings[0].equalsIgnoreCase("top")){ //WORKS
+                            ArrayList<String> list = moneyStream.getTopBalance(9); //0-9 equals 10
                             for (int i = 0; i < list.size(); i++) {
-                                commandSender.sendMessage(ChatColor.BOLD+list.get(i));
+                                commandSender.sendMessage(list.get(i));
                             }
                         }
                     break;
                 case 2: //money pay name
                     break;
-                case 3: //money pay name amount //money set player 0 //money remove player amount
-                    if(strings[0].equalsIgnoreCase("pay") || strings[0].equalsIgnoreCase("bezahlen")){
+                case 3:
+                    if(strings[0].equalsIgnoreCase("pay") || strings[0].equalsIgnoreCase("bezahlen")){ //geld bezahlen playername menge
                         if(Bukkit.getPlayer(strings[1].toLowerCase()) != null){
                             Player receiver = Bukkit.getPlayer(strings[1].toLowerCase());
                             try {
                                 double amount = Double.parseDouble(strings[2]);
                                 assert receiver != null;
-                                if(moneyStream.deleteMoney(commandSender.getName(), amount)){
-                                    moneyStream.giveMoney(receiver.getName(), amount);
+                                if(moneyStream.deleteMoney(Bukkit.getPlayer(commandSender.getName()), amount)){
+                                    moneyStream.giveMoney(receiver, amount);
+                                    receiver.sendMessage(ChatColor.DARK_GREEN+"[Geld] "+ChatColor.GREEN+amount+ChatColor.WHITE+" von "+ChatColor.GOLD+commandSender.getName()+" erhalten!");
+                                    commandSender.sendMessage(ChatColor.DARK_GREEN+"[Geld] "+ChatColor.DARK_RED+amount+ChatColor.WHITE+" an "+ChatColor.GOLD+commandSender.getName()+" gesendet!");
                                     return true;
                                 }
                                 else{
-                                    commandSender.sendMessage("Du hast nicht genug Geld!");
+                                    commandSender.sendMessage(ChatColor.DARK_GREEN+"[Geld] "+ChatColor.WHITE+"Du hast nicht genug Geld!");
                                 }
                             }catch (Exception e){
-                                commandSender.sendMessage("Du hast was falsch angegeben!");
+                                commandSender.sendMessage(ChatColor.DARK_GREEN+"[Geld] "+ChatColor.RED+"Du hast was falsch angegeben!");
                             }
                         }
                     }
-                    if(strings[0].equalsIgnoreCase("set") && commandSender.hasPermission("fe.admin")){
+                    if(strings[0].equalsIgnoreCase("set") && commandSender.hasPermission("fe.admin")){ //money set playername amount
                         if(Bukkit.getPlayer(strings[1].toLowerCase()) != null){
                             Player receiver = Bukkit.getPlayer(strings[1].toLowerCase());
                             try {
                                 double amount = Double.parseDouble(strings[2]);
                                 assert receiver != null;
-                                moneyStream.setBalance(receiver.getName().toLowerCase(), amount);
+                                moneyStream.setBalance(receiver, amount);
                                 return true;
                             }catch (Exception e){
-                                Bukkit.getConsoleSender().sendMessage(strings[1]+" "+strings[2]);
                                 e.printStackTrace();
-                                commandSender.sendMessage("Du hast was falsch angegeben!");
+                                commandSender.sendMessage(ChatColor.DARK_GREEN+"[Geld] "+ChatColor.RED+"Du hast was falsch angegeben!");
                             }
                         }
                     }
-                    if(strings[0].equalsIgnoreCase("remove") && commandSender.hasPermission("fe.admin")){
+                    if(strings[0].equalsIgnoreCase("remove") && commandSender.hasPermission("fe.admin")){ //money remove playername amount
                         if(Bukkit.getPlayer(strings[1].toLowerCase()) != null){
                             Player receiver = Bukkit.getPlayer(strings[1].toLowerCase());
                             try {
                                 double amount = Double.parseDouble(strings[2]);
                                 assert receiver != null;
-                                moneyStream.deleteMoney(receiver.getName(), amount);
+                                moneyStream.deleteMoney(receiver, amount);
                                 return true;
                             }catch (Exception e){
-                                commandSender.sendMessage("Du hast was falsch angegeben!");
+                                commandSender.sendMessage(ChatColor.DARK_GREEN+"[Geld] "+ChatColor.RED+"Du hast was falsch angegeben!");
                             }
                         }
                     }

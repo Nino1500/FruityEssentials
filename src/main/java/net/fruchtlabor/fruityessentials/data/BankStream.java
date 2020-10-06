@@ -6,7 +6,7 @@ import org.bukkit.plugin.Plugin;
 
 public class BankStream {
 
-    DBContext dbContext = new DBContext("localhost", 3306, "mc", "mc", "money_db");
+    DBContext dbContext = new DBContext("49.12.124.252", 3306, "minecraft", "Test99?!", "money_db");
     DBMoney dbMoney = new DBMoney(dbContext);
 
     public BankStream() {

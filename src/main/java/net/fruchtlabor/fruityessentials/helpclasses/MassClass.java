@@ -1,4 +1,4 @@
-package net.fruchtlabor.fruityessentials.gatherclasses;
+package net.fruchtlabor.fruityessentials.helpclasses;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

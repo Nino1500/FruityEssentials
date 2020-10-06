@@ -1,6 +1,6 @@
 package net.fruchtlabor.fruityessentials.commands;
 
-import net.fruchtlabor.fruityessentials.gatherclasses.MassClass;
+import net.fruchtlabor.fruityessentials.helpclasses.MassClass;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
